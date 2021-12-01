@@ -1,0 +1,46 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+main{
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 1fr;  
+  width: 100vw;
+  height: 100vh;
+  padding: 120px 0;
+}
+
+header{
+  grid-column: 2/ span 5;
+  color: white;
+}
+
+h1{
+  font-size: 5rem;
+}
+
+section{
+  background-color: aliceblue;
+  padding: 5%;
+  grid-column: 2/8;
+  grid-row: 2/3;
+}
+
+.profile-card{
+  margin: 50px 0;
+  background-color: rgb(36, 0, 36);
+  color: white;
+}
+
+canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
