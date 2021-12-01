@@ -101,14 +101,16 @@ scene.add(iso);
 
 function moveCamera(){
 
-  const t = document.body.getBoundingClientRect().top;
-
-  // profile.rotation.z += 0.01
-  // profile.rotation.y += 0.02
+  if(screen.width > 770){
+    const t = document.body.getBoundingClientRect().top;
   
-  camera.position.x = t * -0.02;
-  camera.position.y = t * -0.02;
-  camera.position.z = t * -0.11;
+    // profile.rotation.z += 0.01
+    // profile.rotation.y += 0.02
+    
+    camera.position.x = t * -0.02;
+    camera.position.y = t * -0.02;
+    camera.position.z = t * -0.11;
+  }
 
 }
 
@@ -171,15 +173,15 @@ document.body.addEventListener("touchmove",(evt)=> {
     if(te>ts){
       console.log("down");
       scrollContainer.scrollLeft += evt.touches[0].clientY/100;
-  camera.position.x = evt.touches[0].clientY/10 * -0.02;
-  camera.position.y = evt.touches[0].clientY/10 * -0.02;
-  camera.position.z = evt.touches[0].clientY/10 * -0.11;
+  camera.position.x = (te-ts) * -0.02;
+  camera.position.y = (te-ts) * -0.02;
+  camera.position.z = (te-ts) * -0.11;
     }
     else {
       console.log("up");
       scrollContainer.scrollLeft -= evt.touches[0].clientY/100;
-  camera.position.x = evt.touches[0].clientY/10 * +0.02;
-  camera.position.y = evt.touches[0].clientY/10 * +0.02;
-  camera.position.z = evt.touches[0].clientY/10 * +0.11;
+  camera.position.x = (te-ts) * +0.02;
+  camera.position.y = (te-ts) * +0.02;
+  camera.position.z = (te-ts) * +0.11;
     }
 })
