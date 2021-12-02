@@ -103,7 +103,6 @@ function moveCamera(){
 
   if(screen.width > 770){
     const t = document.body.getBoundingClientRect().top;
-  
     // profile.rotation.z += 0.01
     // profile.rotation.y += 0.02
     
@@ -115,6 +114,14 @@ function moveCamera(){
 }
 
 document.body.onscroll = moveCamera;
+
+
+function dismissIndicator(){
+  document.querySelector(".scroll-container").style.display = "none";
+}
+
+document.body.onclick = dismissIndicator;
+
 
 
 
