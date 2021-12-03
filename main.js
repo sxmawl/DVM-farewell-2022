@@ -168,27 +168,27 @@ document.body.addEventListener("wheel",(evt => {
 //   camera.position.y = evt.touches[0].clientY/1000 * -0.02;
 //   camera.position.z = evt.touches[0].clientY/1000 * -0.11;
 // })
-var ts;
-var te;
-document.body.addEventListener("touchstart",(evt)=> {
-    ts = evt.touches[0].clientY;
-    evt.preventDefault();
-})
-document.body.addEventListener("touchmove",(evt)=> {
-    te = evt.touches[0].clientY;
-    evt.preventDefault();
-    if(te>ts){
-      console.log("down");
-      scrollContainer.scrollLeft += evt.touches[0].clientY/100;
-  camera.position.x = (te-ts) * -0.02;
-  camera.position.y = (te-ts) * -0.02;
-  camera.position.z = (te-ts) * -0.11;
-    }
-    else {
-      console.log("up");
-      scrollContainer.scrollLeft -= evt.touches[0].clientY/100;
-  camera.position.x = (te-ts) * +0.02;
-  camera.position.y = (te-ts) * +0.02;
-  camera.position.z = (te-ts) * +0.11;
-    }
-})
+// var ts;
+// var te;
+// document.body.addEventListener("touchstart",(evt)=> {
+//     ts = evt.touches[0].clientY;
+//     evt.preventDefault();
+// })
+// document.body.addEventListener("touchmove",(evt)=> {
+//     te = evt.touches[0].clientY;
+//     evt.preventDefault();
+//     if(te>ts){
+//       console.log("down");
+//       scrollContainer.scrollLeft += evt.touches[0].clientY/100;
+//   camera.position.x = (te-ts) * -0.02;
+//   camera.position.y = (te-ts) * -0.02;
+//   camera.position.z = (te-ts) * -0.11;
+//     }
+//     else {
+//       console.log("up");
+//       scrollContainer.scrollLeft -= evt.touches[0].clientY/100;
+//   camera.position.x = (te-ts) * +0.02;
+//   camera.position.y = (te-ts) * +0.02;
+//   camera.position.z = (te-ts) * +0.11;
+//     }
+// })
