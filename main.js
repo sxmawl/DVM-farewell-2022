@@ -33,6 +33,7 @@ scene.add(torus);
 
 torus.position.z =-95;
 torus.position.y =-25;
+torus.position.x =5;
 
 
 
@@ -112,9 +113,14 @@ const iso = new THREE.Mesh(
   new THREE.MeshStandardMaterial({ map: isoTexture })
 )
 
-iso.position.z = 10;
-iso.position.x = 20;
-
+if(screen.width >770){
+  iso.position.z = 10;
+  iso.position.x = 20;
+}else{
+  iso.position.z = -50;
+  iso.position.x = -10;
+  iso.position.y = 10;
+}
 scene.add(iso);
 
 ////////// Scroll behaviour////////
@@ -189,14 +195,14 @@ let touchendX = 0
 
 function handleGesture() {
   if (touchendX < touchstartX) {
-    camera.position.x = scrollContainer.scrollLeft/3 * -0.02;
-  camera.position.y = scrollContainer.scrollLeft/3 * -0.02;
-  camera.position.z = scrollContainer.scrollLeft/3 * -0.11;
+  //   camera.position.x = scrollContainer.scrollLeft/3 * -0.02;
+  // camera.position.y = scrollContainer.scrollLeft/3 * -0.02;
+  // camera.position.z = scrollContainer.scrollLeft/3 * -0.11;
   }
   if (touchendX > touchstartX) {
-    camera.position.x = scrollContainer.scrollLeft/3 * +0.02;
-  camera.position.y = scrollContainer.scrollLeft/3 * +0.02;
-  camera.position.z = scrollContainer.scrollLeft/3 * +0.11;
+  //   camera.position.x = scrollContainer.scrollLeft/3 * +0.02;
+  // camera.position.y = scrollContainer.scrollLeft/3 * +0.02;
+  // camera.position.z = scrollContainer.scrollLeft/3 * +0.11;
   }
 }
 
