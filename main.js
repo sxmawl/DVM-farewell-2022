@@ -35,10 +35,6 @@ torus.position.z =-95;
 torus.position.y =-25;
 torus.position.x =5;
 
-
-
-
-
 const sunTexture =  new THREE.TextureLoader().load('sun.jpeg')
 const sungeometry = new THREE.SphereGeometry(50);
 const sunmaterial = new THREE.MeshStandardMaterial({ map: sunTexture });
