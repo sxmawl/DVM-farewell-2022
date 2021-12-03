@@ -31,7 +31,25 @@ const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
 
-torus.position.z =-35;
+torus.position.z =-95;
+torus.position.y =-25;
+
+
+
+
+
+const sunTexture =  new THREE.TextureLoader().load('sun.jpeg')
+const sungeometry = new THREE.SphereGeometry(50);
+const sunmaterial = new THREE.MeshStandardMaterial({ map: sunTexture });
+
+const sun = new THREE.Mesh(sungeometry, sunmaterial);
+
+if(screen.width > 770){
+  scene.add(sun);
+}
+
+sun.position.z = 15;
+sun.position.x = -35;
 
 // const pointLight = new THREE.PointLight(0xffffff);
 
@@ -133,6 +151,10 @@ function animate() {
   torus.rotation.x += 0.006;
   torus.rotation.y += 0.006;
   torus.rotation.z -= 0.002;
+
+  sun.rotation.x -= 0.006;
+  sun.rotation.y -= 0.006;
+  sun.rotation.z += 0.001;
 
   iso.rotation.z += 0.02; 
   iso.position.x -= 0.005; 
