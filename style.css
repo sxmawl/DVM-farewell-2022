@@ -42,8 +42,8 @@ section {
   position: fixed;
   top: 300px;
   /* background: red; */
-  width: 45vw;
-  left: 15vw;
+  width: 50vw;
+  left: 10vw;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

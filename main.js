@@ -60,7 +60,7 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(200));
+    .map(() => THREE.MathUtils.randFloatSpread(500));
 
   star.position.set(x,y,z);
   scene.add(star);
@@ -68,7 +68,7 @@ function addStar() {
 }
 
 
-Array(500).fill().forEach(addStar);
+Array(3000).fill().forEach(addStar);
 
 /// Background /////////
 
@@ -166,8 +166,16 @@ let touchendX = 0
 
 
 function handleGesture() {
-  if (touchendX < touchstartX) moveCamera()
-  if (touchendX > touchstartX) alert('swipe')
+  if (touchendX < touchstartX) {
+    camera.position.x = scrollContainer.scrollLeft/3 * -0.02;
+  camera.position.y = scrollContainer.scrollLeft/3 * -0.02;
+  camera.position.z = scrollContainer.scrollLeft/3 * -0.11;
+  }
+  if (touchendX > touchstartX) {
+    camera.position.x = scrollContainer.scrollLeft/3 * +0.02;
+  camera.position.y = scrollContainer.scrollLeft/3 * +0.02;
+  camera.position.z = scrollContainer.scrollLeft/3 * +0.11;
+  }
 }
 
 scrollContainer.addEventListener('touchstart', e => {
